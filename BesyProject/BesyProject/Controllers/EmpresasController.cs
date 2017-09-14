@@ -15,7 +15,7 @@ namespace BesyProject.Controllers
                 new Empresa()
                 {
                     EmpresaId = 1,
-                    Nome = "Mecanics",
+                    Nome = "Mecanicss",
                     Endereco = "Avenida Teste",
                     Telefone = 88549635,
                     Cnpj = 954187364875236,
