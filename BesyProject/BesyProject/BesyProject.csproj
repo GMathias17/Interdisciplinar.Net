@@ -165,10 +165,10 @@
     </Content>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Empresas\Create.cshtml" />
-    <Content Include="Views\Empresas\Index.cshtml" />
     <Content Include="Views\Empresas\Edit.cshtml" />
     <Content Include="Views\Empresas\Details.cshtml" />
     <Content Include="Views\Empresas\Delete.cshtml" />
+    <Content Include="Views\Empresas\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
