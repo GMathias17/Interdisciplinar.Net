@@ -38,6 +38,15 @@ namespace BesyProject.Controllers
                     Telefone = 99596665,
                     Cnpj = 795434195432846,
                     Especialidade = "Manutenção de energia elétrica"
+                },
+                new Empresa()
+                {
+                    EmpresaId = 4,
+                    Nome = "Encanadoris",
+                    Endereco = "Avenida Teste n5000",
+                    Telefone = 65464642,
+                    Cnpj = 656565698981523,
+                    Especialidade = "Serviços em encanamentos"
                 }
             };
 
