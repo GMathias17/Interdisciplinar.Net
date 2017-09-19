@@ -15,8 +15,8 @@ namespace BesyProject.Controllers
         // GET: Empresa
         public ActionResult Index()
         {
-
-            return View(context.Empresas.OrderBy(c => c.Nome));
+              return View(context.Empresas.OrderBy(
+                c => c.Nome));
         }
 
     }
