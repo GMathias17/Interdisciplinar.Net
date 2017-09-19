@@ -19,5 +19,21 @@ namespace BesyProject.Controllers
                 c => c.Nome));
         }
 
+        #region Create
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Empresa empresa)
+        {
+            context.Empresas.Add(empresa);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
+
     }
 }
