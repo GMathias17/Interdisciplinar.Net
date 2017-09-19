@@ -13,7 +13,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Adicionar Cliente", "Create")
     </p>
     <table class="table">
         <tr>
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.CPF)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ClienteId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId })
+                @Html.ActionLink("Editar", "Edit", new { id=item.ClienteId }) |
+                @Html.ActionLink("Detalhes", "Details", new { id=item.ClienteId }) |
+                @Html.ActionLink("Remover", "Delete", new { id=item.ClienteId })
             </td>
         </tr>
     }
