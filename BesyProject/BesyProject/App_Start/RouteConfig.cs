@@ -18,7 +18,7 @@ namespace BesyProject
                 url: "{controller}/{action}/{id}",
                    defaults: new
                 {
-                    controller = "Clientes",
+                    controller = "Empresas",
                     action = "Index",
                     id = UrlParameter.Optional
                 }
