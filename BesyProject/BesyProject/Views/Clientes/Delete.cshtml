@@ -1,64 +1,120 @@
 ﻿@model BesyProject.Models.Cliente
 
 @{
-    Layout = null;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Visualizando dados do Cliente";
 }
 
-<!DOCTYPE html>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Dados do fabricante a ser removido
+	</div>
+	<div class="panel-body">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-    <h3>Tem certeza de que desejar remover este Cliente?</h3>
-    <div>
-        <h4>Cliente</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Endereco)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Telefone)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.CPF)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.CPF)
-            </dd>
-    
-        </dl>
-    
-        @using (Html.BeginForm()) {
-            @Html.AntiForgeryToken()
-    
-            <div class="form-actions no-color">
-                <input type="submit" value="Remover" class="btn btn-default" /> |
-                @Html.ActionLink("Voltar para Lista", "Index")
+
+		<!-- Panel Nome-->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Nome)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+                       glyphicon-user"></i>
+				</span>
+				@Html.EditorFor(model => model.Nome,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!--End Panel Nome-->
+
+		<!-- #Panel Endereco -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco)
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon
+                       glyphicon-globe"></i>
+                </span>
+                @Html.EditorFor(model => model.Endereco,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
             </div>
-        }
-    </div>
-</body>
-</html>
+        </div>
+        <!-- #endregion --
+
+		<!-- #Panel Telefone -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefone)
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="glyphicon
+            glyphicon-phone"></i>
+                </span>
+                @Html.EditorFor(model => model.Telefone,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+            </div>
+        </div>
+        <!-- #endregion -->
+		
+		<!-- #Panel CPF -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.CPF)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+            glyphicon-list-alt"></i>
+				</span>
+				@Html.EditorFor(model => model.CPF,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
+    
+       <div class="panel-footer panel-info">
+		   @using (Html.BeginForm())
+		   {
+			   @Html.AntiForgeryToken()
+			   <input type="submit" value=
+					  "Remover CLIENTE" class=
+					  "btn btn-danger" />
+				@Html.ActionLink(
+			   "Retornar para a listagem",
+			   "Index", null, new
+			   {
+				   @class =
+			   "btn btn-info"
+			   })
+		   }
+		   </div>
+
+	

@@ -114,8 +114,11 @@ namespace BesyProject.Controllers
             Find(id);
             context.Clientes.Remove(cliente);
             context.SaveChanges();
+            TempData["Message"] = "Cliente	" +
+                            cliente.Nome.ToUpper() + "	foi	removido";
             return RedirectToAction("Index");
         }
+
 
         #endregion
 
