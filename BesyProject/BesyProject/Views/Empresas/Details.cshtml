@@ -1,66 +1,142 @@
 ﻿@model BesyProject.Models.Empresa
-
 @{
-    Layout = null;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Detalhes da Empresa";
 }
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div>
+			<h4>Visualizando dados da Empresa</h4>
+			<hr />
+		</div>
+	</div>
+	<div class="panel-body">
+		<!-- #Panel Nome -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Nome)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+                       glyphicon-user"></i>
+				</span>
+				@Html.EditorFor(model => model.Nome,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
 
-<!DOCTYPE html>
+		
+		<!-- #Panel Endereco -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Endereco)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+                       glyphicon-globe"></i>
+				</span>
+				@Html.EditorFor(model => model.Endereco,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Empresa</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Endereco)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Telefone)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Telefone)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Cnpj)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Cnpj)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Especialidade)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Especialidade)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.EmpresaId }) |
-        @Html.ActionLink("Voltar para Lista", "Index")
-    </p>
-</body>
-</html>
+		<!-- #Panel Telefone -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Telefone)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+            glyphicon-phone"></i>
+				</span>
+				@Html.EditorFor(model => model.Telefone,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
+
+		<!-- #Panel CPF -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Cnpj)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+            glyphicon-list-alt"></i>
+				</span>
+				@Html.EditorFor(model => model.Cnpj,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
+
+
+
+		<!-- #Panel Especialidade -->
+		<div class="form-group">
+			@Html.LabelFor(model => model.Especialidade)
+			<br />
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="glyphicon
+            glyphicon-list-alt"></i>
+				</span>
+				@Html.EditorFor(model => model.Especialidade,
+         new
+         {
+             htmlAttributes = new
+             {
+                 @class = "form-control",
+                 disabled = "disabled"
+             }
+         })
+			</div>
+		</div>
+		<!-- #endregion -->
+
+
+		<!-- #Panel Footer -->
+		<div class="panel-footer panel-info">
+			@Html.ActionLink("Alterar", "Edit", new
+	   {
+		   id =
+	   Model.EmpresaId
+	   }, new
+	   {
+		   @class =
+	   "btn btn-info"
+	   })
+			@Html.ActionLink("Retornar para a listagem",
+       "Index", null, new { @class = "btn btn-info" })
+		</div>
+		<!-- #endregion -->
