@@ -7,6 +7,27 @@
     @RenderSection("styles", false)
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                    <!--<li role="presentation" class="active"><a href="#">Início</a></li>-->
+                    <li role="presentation">@Html.ActionLink("Servicos", "Index", "Servicos")</li>
+                    <li role="presentation">@Html.ActionLink("Empresas", "Index", "Empresas")</li>
+                    <li role="presentation">@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="page-header bg-danger">
@@ -17,12 +38,7 @@
         </div>
         <div class="row">
             <div class="col-xs-3 col-md-3 bg-success">
-                <ul class="nav nav-pill	nav-stacked">
-                  <!--<li role="presentation" class="active"><a href="#">Início</a></li>-->  
-					<li role="presentation">@Html.ActionLink("Servicos", "Index", "Servicos")</li>
-                    <li role="presentation">@Html.ActionLink("Empresas", "Index", "Empresas")</li>
-                    <li role="presentation">@Html.ActionLink("Clientes", "Index", "Clientes")</li>
-                </ul>
+                
             </div>
             <div class="col-xs-9 col-md-9"><br />@RenderBody()</div>
         </div>
