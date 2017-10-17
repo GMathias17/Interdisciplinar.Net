@@ -10,4 +10,5 @@ namespace BesyProject.Models
         public long ServicoId { get; set; }
         public string Descricao { get; set; }
     }
+
 }
