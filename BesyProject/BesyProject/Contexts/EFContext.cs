@@ -13,5 +13,7 @@ namespace BesyProject.Contexts
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+
+        public System.Data.Entity.DbSet<BesyProject.Models.Administracao> Administracaos { get; set; }
     }
 }

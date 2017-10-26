@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BesyProject.Models.Administracao>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Administracao de Clientes e Empresa";
+}
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Administracao
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li role="presentation">@Html.ActionLink("Empresas", "Index", "Empresas")</li>
+        <li role="presentation">@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+    </ul>
+</div>
+

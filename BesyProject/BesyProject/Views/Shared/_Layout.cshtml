@@ -10,16 +10,14 @@
 
     <nav id="menu">
         <ul>
-            <li role="presentation">@Html.ActionLink("Serviços", "Index", "Servicos")</li>
-            <li role="presentation">@Html.ActionLink("Empresas", "Index", "Empresas")</li>
-            <li role="presentation">@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+         <li role="presentation">@Html.ActionLink("Administracao", "Index", "Administracao")</li>
+         <li role="presentation">@Html.ActionLink("Serviços", "Index", "Servicos")</li>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
         </ul>
-
-
     </nav>
-
-
-
 
     <div class="container">
         <div class="row">
