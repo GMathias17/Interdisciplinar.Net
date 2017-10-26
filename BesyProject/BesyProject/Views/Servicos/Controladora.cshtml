@@ -1,0 +1,24 @@
+﻿@model BesyProject.Models.Servico
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Requisicao de servicos";
+}
+<div class="panel-body">
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Descreva seu Servico</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    <div class="panel-footer panel-info">
+        @Html.ActionLink("Registrar um novo Servico",
+                         "Create", null, new
+                         {
+                             @class =
+                         "btn btn-success"
+                         })
+    </div>
+
