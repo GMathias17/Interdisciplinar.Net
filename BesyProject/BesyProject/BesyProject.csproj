@@ -442,6 +442,7 @@
     <Content Include="Views\Administracao\Index.cshtml" />
     <Content Include="Views\Servicos\Create.cshtml" />
     <Content Include="Views\Servicos\Controladora.cshtml" />
+    <Content Include="Views\Servicos\_EmpresasPorServicos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

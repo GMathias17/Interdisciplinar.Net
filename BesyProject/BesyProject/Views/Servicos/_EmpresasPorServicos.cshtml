@@ -1,0 +1,29 @@
+﻿@model List<BesyProject.Models.Empresa>
+
+@{
+	var lista = new List<BesyProject.Models.Empresa>();
+	if (Model != null)
+	{
+		lista = Model;
+	}
+
+}
+
+	<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Empresa</th>
+					<th>Especialidade</th>
+				</tr>
+			</thead>
+		<tbody>
+			@foreach (var empresa in lista)
+			{
+				<tr>
+					<td>@empresa.EmpresaId</td>
+					<td>@empresa.Nome</td>
+					<td>@empresa.Especialidade</td>
+				</tr>
+			}
+		</tbody>
+	</table>
