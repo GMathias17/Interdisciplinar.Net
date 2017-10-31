@@ -13,18 +13,22 @@ namespace BesyProject.Controllers
     public class EmpresasController : Controller
     {
         private EFContext context = new EFContext();
-       
+
         // GET: Empresa
         public ActionResult Index()
         {
-              return View(context.Empresas.OrderBy(
-                c => c.Nome));
+            return View(context
+                .Empresas
+                .OrderBy(c => c.Nome));
         }
 
         #region Create
 
         public ActionResult Create()
         {
+            ViewBag.ServicoId = new SelectList(context
+                .Servicos
+                .OrderBy(b => b.Descricao), "ServicoId", "Descricao");
             return View();
         }
         [HttpPost]
@@ -51,6 +55,9 @@ namespace BesyProject.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ServicoId = new SelectList(context
+                .Servicos
+                .OrderBy(b => b.Descricao), "ServicoId", "Descricao", empresa.ServicoId);
             return View(empresa);
         }
         [HttpPost]

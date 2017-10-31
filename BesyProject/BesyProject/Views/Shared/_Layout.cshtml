@@ -10,8 +10,8 @@
 
     <nav id="menu">
         <ul>
-         <li role="presentation">@Html.ActionLink("Administracao", "Index", "Administracao")</li>
-		 <li role="presentation">@Html.ActionLink("Servicos", "Index", "Servicos")</li>
+            <li role="presentation">@Html.ActionLink("Administracao", "Index", "Administracao")</li>
+            <li role="presentation">@Html.ActionLink("Servicos", "Index", "Servicos")</li>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -22,14 +22,17 @@
     <div class="container">
         <div class="row">
             <div class="page-header bg-danger">
-                <h1>Besy! 
-                <small class="text-danger">Solicite seu serviço</small>
+                <h1>
+                    Besy!
+                    <small class="text-danger">Solicite seu serviço</small>
                 </h1>
             </div>
         </div>
         <div class="row">
-            
-            <div class="col-xs-9 col-md-9"><br />@RenderBody()</div>
+
+            <div class="col-xs-12 col-md-12">
+                @RenderBody()
+            </div>
         </div>
         <br />
         <div class="row">

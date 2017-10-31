@@ -26,6 +26,8 @@ namespace BesyProject.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.EmpresaId = new SelectList(context.Empresas.
+                        OrderBy(b => b.Nome), "EmpresaId", "Nome");
             return View();
         }
         [HttpPost]
@@ -67,9 +69,62 @@ namespace BesyProject.Controllers
             return RedirectToAction("Index");
         }
         #endregion
-    }
-}
 
+
+        #region Edit
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new
+                HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Servico servico = context.Servicos.Find(id);
+            if (servico == null)
+            {
+                return HttpNotFound();
+            }
+            return View(servico);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Servico servico)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Entry(servico).State =
+                EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(servico);
+        }
+
+        #endregion
+
+
+        #region Details
+        public ActionResult Details(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(
+                HttpStatusCode.BadRequest);
+            }
+            Servico servico = context.Servicos.
+            Find(id);
+            if (servico == null)
+            {
+                return HttpNotFound();
+            }
+            return View(servico);
+        }
+
+        #endregion
+    }
+
+}
 
 
     

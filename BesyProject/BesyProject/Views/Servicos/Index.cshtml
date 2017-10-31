@@ -1,9 +1,65 @@
-﻿@model List<BesyProject.Models.Empresa>
-
+﻿@model IEnumerable<BesyProject.Models.Servico>
 
 @{
-	ViewBag.Title = "Index";
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Listagem de Clientes";
 }
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Relação de Clientes registrados
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ServicoId }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ServicoId }) |
+                            @Html.ActionLink("Remover", "Delete", new { id = item.ServicoId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
 
-@Html.Partial("_EmpresasPorServicos")
+        </table>
+    </div>
+    <div class="panel-footer panel-info">
+        @Html.ActionLink("Registrar um novo Serviço", "Create", null, new { @class = "btn btn-success" })
+        <button type="button" class="btn btn-default">
+            @Html.ActionLink("Retornar para administracao",
+                          "Index", "Administracao")
+        </button>
+    </div>
+
+</div>
+@section styles{
+    <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage {
+    <script src=" @Url.Content("~/scripts/DataTables/jquery.dataTables.js") "></script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable();
+        });
+    </script>
+}

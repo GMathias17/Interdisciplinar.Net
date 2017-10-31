@@ -438,11 +438,14 @@
     <Content Include="Views\Clientes\Delete.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Servicos\Index.cshtml" />
     <Content Include="Views\Administracao\Index.cshtml" />
     <Content Include="Views\Servicos\Create.cshtml" />
     <Content Include="Views\Servicos\Controladora.cshtml" />
     <Content Include="Views\Servicos\_EmpresasPorServicos.cshtml" />
+    <Content Include="Views\Servicos\Index.cshtml" />
+    <Content Include="Views\Servicos\Delete.cshtml" />
+    <Content Include="Views\Servicos\Edit.cshtml" />
+    <Content Include="Views\Servicos\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
