@@ -1,29 +1,39 @@
-﻿@model List<BesyProject.Models.Empresa>
+﻿@model	BesyProject.Models.Servico
 
-@{
-	var lista = new List<BesyProject.Models.Empresa>();
-	if (Model != null)
-	{
-		lista = Model;
-	}
 
-}
+<div class="panel	panel-primary">
+    <div class="panel-heading">
+        Relação	de	Servicos	registrados	para	a Empresa
+    </div>
+    <div class="panel-body">
+        <table class="table	table-striped	table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ServicoId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ServicoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
 
-	<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Empresa</th>
-					<th>Especialidade</th>
-				</tr>
-			</thead>
-		<tbody>
-			@foreach (var empresa in lista)
-			{
-				<tr>
-					<td>@empresa.EmpresaId</td>
-					<td>@empresa.Nome</td>
-					<td>@empresa.Especialidade</td>
-				</tr>
-			}
-		</tbody>
-	</table>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer	panel-info">
+    </div>
+</div>
