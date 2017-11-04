@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BesyProject.Models.Servico>
+
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Empresas por servicos";
+}
+
+
+<ul>
+	<li><h4>Visualizando dados da Empresa</h4></li>
+</ul>
+
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Relação de empresas registradas
+	</div>
+	<div class="panel-body">
+
+		<table class="table">
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Descricao)
+				</th>
+				<th>
+					EMPRESA
+				</th>
+				<th></th>
+			</tr>
+
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Descricao)
+					</td>
+					<td>
+						<ul>
+							@foreach (var servico in item.Empresas)
+							{
+								<li>@Html.DisplayFor(modelItem => servico.Nome)</li>
+							}
+						</ul>				
+					
+						
+					</td>
+				</tr>
+			}
+
+		</table>
+
+
+
+	</div>
+	</div>

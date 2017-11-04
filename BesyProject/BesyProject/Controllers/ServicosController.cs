@@ -2,6 +2,7 @@
 using BesyProject.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -27,7 +28,8 @@ namespace BesyProject.Controllers
         public ActionResult Create()
         {
             ViewBag.EmpresaId = new SelectList(context.Empresas.
-                        OrderBy(b => b.Nome), "EmpresaId", "Nome");
+                        OrderBy(b => b.Nome), "EmpresaId", "Nome");
+
             return View();
         }
         [HttpPost]
@@ -62,9 +64,9 @@ namespace BesyProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
-            Servico servico = context.Servicos.
+            Servico servicos = context.Servicos.
             Find(id);
-            context.Servicos.Remove(servico);
+            context.Servicos.Remove(servicos);
             context.SaveChanges();
             return RedirectToAction("Index");
         }

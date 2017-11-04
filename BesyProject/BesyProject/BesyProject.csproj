@@ -400,7 +400,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -408,6 +410,7 @@
     <Compile Include="Controllers\AdministracaoController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EmpresasController.cs" />
+    <Compile Include="Controllers\EmpresasPorServicosController.cs" />
     <Compile Include="Controllers\ServicosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -441,7 +444,7 @@
     <Content Include="Views\Administracao\Index.cshtml" />
     <Content Include="Views\Servicos\Create.cshtml" />
     <Content Include="Views\Servicos\Controladora.cshtml" />
-    <Content Include="Views\Servicos\_EmpresasPorServicos.cshtml" />
+    <Content Include="Views\EmpresasPorServicos\Index.cshtml" />
     <Content Include="Views\Servicos\Index.cshtml" />
     <Content Include="Views\Servicos\Delete.cshtml" />
     <Content Include="Views\Servicos\Edit.cshtml" />
@@ -455,6 +458,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ServicosEmpresas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

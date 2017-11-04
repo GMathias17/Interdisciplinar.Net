@@ -13,8 +13,7 @@ namespace BesyProject.Models
         public long Telefone { get; set; }
         public long Cnpj { get; set; }
         public string Especialidade { get; set; }
-        public int ServicoId { get; set; }
-        public Servico Servico { get; set; }
-       
+        public virtual Servico Servico { get; set; }
+        public long ServicoId { get; set; }
     }
 }

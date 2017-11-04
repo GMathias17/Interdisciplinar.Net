@@ -11,7 +11,7 @@
     <nav id="menu">
         <ul>
             <li class="@(Context.Request.Path.Contains("Administracao") ? "active" : "")" role="presentation">@Html.ActionLink("Administracao", "Index", "Administracao")</li>
-            <li class="@(Context.Request.Path.Contains("Servicos") ? "active" : "")" role="presentation">@Html.ActionLink("Servicos", "Index", "Servicos")</li>
+            <li class="@(Context.Request.Path.Contains("Servicos") ? "active" : "")" role="presentation">@Html.ActionLink("Servicos", "Index", "EmpresasPorServicos")</li>
             <ul class="nav navbar-nav navbar-right">
                 <li ><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

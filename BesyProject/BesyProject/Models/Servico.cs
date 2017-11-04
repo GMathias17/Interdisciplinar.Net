@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 
 
+
 namespace BesyProject.Models
 {
     public class Servico
@@ -11,7 +12,7 @@ namespace BesyProject.Models
         public long ServicoId { get; set; }
         public string Descricao { get; set; }
         public string Tipo { get; set; }
-        public virtual ICollection<Empresa> Empresas { get; set; }
+        public virtual IList<Empresa> Empresas { get; set; }
     }
 
 }
