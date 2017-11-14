@@ -43,6 +43,21 @@ html {
 body {
   margin: 0;
 }
+
+.teste {
+    font-family:"Berlin Sans FB", serif;
+    color:#FFFFFF;
+    text-shadow: 2px 2px black;
+    font-size:medium;
+}
+
+.teste1 {
+    font-family:"Berlin Sans FB", serif;
+    color:#000000;
+    text-shadow: 2px 2px #FFF;
+    font-size:30px;
+}
+
 article,
 aside,
 details,
@@ -1128,7 +1143,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #000000;
   text-decoration: none;
 }
 a:hover,
@@ -1214,10 +1229,11 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
-  font-weight: 500;
+  font-family: "Berlin Sans FB", serif;
+  font-weight: 400;
   line-height: 1.1;
-  color: inherit;
+  color: #FFFFFF;
+  text-shadow: 2px 2px black;
 }
 h1 small,
 h2 small,
@@ -1432,7 +1448,7 @@ a.bg-warning:focus {
   background-color: #f7ecb5;
 }
 .bg-danger {
-  background-color: #C3C3C3;
+  background-color: #353535;
 }
 a.bg-danger:hover,
 a.bg-danger:focus {
@@ -5736,18 +5752,18 @@ button.list-group-item-danger.active:focus {
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #000000;
+  border-color: #000000;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #337ab7;
+  border-top-color: #000000;
 }
 .panel-primary > .panel-heading .badge {
-  color: #337ab7;
+  color: #000000;
   background-color: #fff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #337ab7;
+  border-bottom-color: #000000;
 }
 .panel-success {
   border-color: #d6e9c6;

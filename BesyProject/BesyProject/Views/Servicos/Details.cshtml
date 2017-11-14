@@ -58,3 +58,18 @@
 
         </div>
         <!-- #endregion -->
+        <!-- #Panel Footer -->
+        <div class="panel-footer panel-info">
+            @Html.ActionLink("Alterar", "Edit", new
+       {
+           id =
+       Model.ServicoId
+       }, new
+       {
+           @class =
+       "btn btn-info"
+       })
+            @Html.ActionLink("Retornar para a listagem",
+       "Index", null, new { @class = "btn btn-info" })
+        </div>
+        <!-- #endregion -->

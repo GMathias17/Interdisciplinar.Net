@@ -33,12 +33,19 @@ namespace BesyProject.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Empresa empresa)
+        public ActionResult Create([Bind(Include = "EmpresaId,Nome,Endereco,Telefone,Cnpj,Especialidade,ServicoId")] Empresa empresa)
         {
-            context.Empresas.Add(empresa);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                context.Empresas.Add(empresa);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.ServicoId = new SelectList(context.Servicos, "ServicoId", "Descricao", empresa.ServicoId);
+            return View(empresa);
         }
+
         #endregion
 
         #region Edit
