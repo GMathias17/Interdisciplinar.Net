@@ -18,8 +18,8 @@ namespace BesyProject.Controllers
         // GET: Servicos
         public ActionResult Index()
         {
-            return View(context.Servicos.OrderBy(
-              s => s.Descricao));
+            var servicos = context.Servicos.Include(f => f.Empresas).OrderBy(n => n.Descricao);
+            return View(servicos);
         }
 
 
