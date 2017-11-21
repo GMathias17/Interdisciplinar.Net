@@ -129,6 +129,8 @@ namespace BesyProject.Controllers
             Find(id);
             context.Empresas.Remove(empresa);
             context.SaveChanges();
+            TempData["Message"] = "Empresa	" + empresa.Nome.ToUpper()
+                        + "	foi	removida";
             return RedirectToAction("Index");
         }
 
