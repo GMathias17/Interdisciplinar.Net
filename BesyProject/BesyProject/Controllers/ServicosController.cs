@@ -62,13 +62,19 @@ namespace BesyProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Delete(long id)
         {
-            Servico servicos = context.Servicos.
-            Find(id);
-            context.Servicos.Remove(servicos);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Servico servico = context.Servicos.Find(id);
+                context.Servicos.Remove(servico);
+                context.SaveChanges();
+                TempData["Message"] = "Servico	" + servico.Descricao.ToUpper()
+                        + "	foi	removido";
+                return RedirectToAction("Index");
+            }
+            catch { return View(); }
         }
         #endregion
 

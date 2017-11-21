@@ -35,6 +35,7 @@
         </div>
         <!-- #endregion -->
 
+        @Html.Partial("~/Views/Empresas/_PorServico.cshtml", Model.Empresas.ToList())
      
         <!-- #Panel Footer -->
         <div class="panel-footer panel-info">
@@ -52,4 +53,3 @@
         </div>
         <!-- #endregion -->
 
-@Html.Partial("~/Views/Empresas/_PorServico.cshtml", Model.Empresas.ToList())
