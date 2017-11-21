@@ -19,8 +19,7 @@
             <br />
             <div class="input-group">
                 <span class="input-group-addon">
-                    <i class="glyphicon
-                       glyphicon-user"></i>
+                    <i class="glyphicon glyphicon-user"></i>
                 </span>
                 @Html.EditorFor(model => model.Descricao,
          new
@@ -36,7 +35,7 @@
         <!-- #endregion -->
 
         @Html.Partial("~/Views/Empresas/_PorServico.cshtml", Model.Empresas.ToList())
-     
+
         <!-- #Panel Footer -->
         <div class="panel-footer panel-info">
             @Html.ActionLink("Alterar", "Edit", new
@@ -52,4 +51,18 @@
        "Index", null, new { @class = "btn btn-info" })
         </div>
         <!-- #endregion -->
+    </div>
+</div>
 
+@section styles{
+    <link href="@Url.Content("~/content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+}
+@section ScriptPage {
+    <script src=" @Url.Content("~/scripts/DataTables/jquery.dataTables.js") "></script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap.js")"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable();
+        });
+    </script>
+}
